@@ -102,8 +102,234 @@ Bitwise operator
 =============
 Control Flow Statements
 =============
+# """
+# count = 0
+# while count != 6:
+#     print(count)
+#     count += 1
 """
-count = 0
-while count != 6:
-    print(count)
-    count += 1
+while condition expression:
+    code statement 1
+    code statement 2
+    ......
+    code statement n
+
+"""
+
+# data_point = 6 
+# count = 0
+
+# while count != data_point:
+#     print(count)
+#     count += 1
+
+"""
+for item in sequence:
+    code statement 1
+    code statement 2
+    ......
+    code statement n
+"""
+
+# top_gainers = ['BHARTIARTL', 'EICHERMOT', 'HCLTECH',
+# 'BAJFINANCE', 'RELIANCE']
+
+# for gainer in top_gainers:
+#     print(str(top_gainers.index(gainer)) + ' : ' + gainer)
+
+# for i in range(len(top_gainers)):
+#     print(i, top_gainers[i])
+
+# for i, val in enumerate(top_gainers):
+#     print(i, val)
+"""
+===============
+ Looping through dictionaries
+===============
+"""
+# dict = {'AAPL':193.53,
+# 'HP':24.16,
+# 'MSFT':108.29,
+# 'GOOG':1061.49}
+
+# for key, val in dict.items():
+#     print(f"Price of {key} is {val}")
+
+# print(dict.items())
+
+"""
+===============
+ Nested through 
+===============
+"""
+
+# for table_val in range(1, 10):
+#     for mul in range(1, 11):
+#         ans = table_val * mul
+#         print(ans, end=" ")
+#     print()
+
+# Example 1: Calculating the Average of Numbers
+# numbers = [10, 20, 30, 40, 50]
+# total = 0
+
+# for num in numbers:
+#     total += num
+
+# avg = total // len(numbers)
+# print(avg)
+
+# Example 2: Finding the Maximum Value
+# numbers = [5, 2, 8, 1, 9]
+# max_val = numbers[0]
+
+# this
+# for num in numbers:
+#     if num > max_val:
+#         max_val = num
+
+# print(max_val) 
+
+# Or This 
+# for num in numbers:
+#     max_val = max(max_val, num)
+
+# print(max_val) 
+
+# Example 3: Reversing a List
+# numbers = [1, 2, 3, 4, 5]
+# reverse_list = numbers[::-1]
+# print(reverse_list)
+
+# Find the min num
+# numbers = [5, 2, 8, 1, 9]
+# min_val = numbers[0]
+
+# for num in numbers:
+#     # if num < min_val:
+#     #     min_val = num
+#     min_val = min(min_val, num)
+
+# print(min_val)
+
+# numbers = [1, 2, 3, 4, 5]
+# count = 0
+# count = sum(numbers)
+
+# # for num in numbers:
+# #     count += num
+
+# print(count)
+
+# def calculate_prefix_sum(arr):
+
+    # Calculates the prefix sum array for a given array.
+
+    # Args:
+    #     arr (list): The input array.
+
+    # Returns:
+    #     list: The prefix sum array.
+    
+    # n = len(arr)
+    # prefix_sum = [0] * n
+    
+    # if n > 0:
+    #     prefix_sum[0] = arr[0]
+
+    #     for i in range(1, n):
+    #         prefix_sum[i] = prefix_sum[i - 1] + arr[i]
+    
+    # return prefix_sum
+
+    # ===== Padding with Zeros ===== 
+    # prefix_sum = [0]*(n + 1)
+
+    # for i in range(1, n+1):
+    #     prefix_sum[i] = arr[i - 1] + prefix_sum[i - 1]
+    
+    # return prefix_sum
+
+    # Normal
+    # prefix_sum = [0] * n
+    # curr_sum =  0
+
+    # for i in range(n):
+    #     curr_sum += arr[i]
+    #     prefix_sum[i] = curr_sum
+    
+    # return prefix_sum
+
+    # === 
+    # prefix_sum = [0] * n
+    # prefix_sum[0] = arr[0]
+
+    # for i in range(1, n):
+    #     prefix_sum[i] = prefix_sum[i - 1] + arr[i]
+    
+    # return prefix_sum
+
+# Example usage:
+# arr = [1, 2, 3, 4, 5]
+# prefix_sum = calculate_prefix_sum(arr)
+# print(f"Original array: {arr}")
+# print(f"Prefix sum array: {prefix_sum}")
+
+
+# matrix = [
+#     [1, 2, 3],
+#     [4, 5, 6],
+#     [7, 8, 9]b
+# ]
+
+# rows = len(matrix)
+# cols = len(matrix[0])
+
+# prefix_sum = [[0] * cols for _ in range(rows)]
+# print(prefix_sum)
+
+
+# LinkedList
+
+class Node:
+    def __init__(self, val = 0):
+        self.val = val
+        self.next = None
+    
+    def __str__(self):
+        return str(self.val)
+    
+head = Node(1)
+A = Node(2)
+B = Node(3)
+C = Node(4)
+
+head = A
+A.next = B
+B.next = C
+# print(head.next)
+
+# == Traverse Trough
+# cur = head
+# while cur:
+#     print(cur, end=" -> ")
+#     cur = cur.next
+
+curr = head
+element = []
+while curr:
+    element.append(str(curr.val))
+    curr = curr.next
+
+print(' -> '.join(element))
+
+def search(head, val):
+    curr = head
+    while curr:
+        if val == curr.val:
+            return True
+        curr = curr.next
+    
+    return False
+
+print(search(head, 2))
