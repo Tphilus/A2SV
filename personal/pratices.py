@@ -291,6 +291,112 @@ for item in sequence:
 
 # LinkedList
 
+# matrix = [
+#     [1,2,3],
+#     [4,5,6],
+#     [7,8,9]
+# ]
+
+# row = len(matrix)
+# col = len(matrix[0])
+
+# transposed = [[0]* col for _ in range(row)]
+# print(transposed)
+
+# for row_idx in range(len(matrix) -1,-1,-1):
+#     for col_idx in range(len(matrix[0]) -1,-1,-1):
+#         print(matrix[row_idx][col_idx])
+
+# matrix = [[1, 2, 3],
+#           [4, 5, 6],
+#           [7, 8, 9]]
+
+# num_rows = len(matrix)
+# num_cols = len(matrix[0]) # Assuming all rows have the same length
+
+# for j in range(num_cols):  # Iterate through columns
+#     for i in range(num_rows):  # Iterate through rows
+#         print(matrix[i][j], end=" ")
+#     print()  # Newline after each column
+
+"""
+=============
+Binary Search
+============
+"""
+
+# def binary_search(arr, target):
+#     low = 0
+#     high = len(arr) - 1
+
+#     while low < high:
+#         mid = (low + high) // 2
+
+#         if target == arr[mid]:
+#             print("Target is found", mid)
+#             break
+#         elif target > arr[mid]:
+#             low = mid + 1 
+#         else:
+#             high = mid - 1
+
+# arr = [1, 2, 3, 4, 5, 6, 8]
+# target = 6
+# print(binary_search(arr, target))
+
+
+# def bisect_left(arr, target):
+#     low = 0
+#     high = len(arr) -1
+
+#     while low < high:
+#         mid = (low + high) // 2
+#         if arr[mid] > target:
+#             pass
+
+
+# arr = [1, 2, 3, 4, 5, 6, 8]
+# target = 6
+
+# def bisect_right(arr, target):
+#     pass
+
+"""
+=============
+Sliding Window
+=============
+"""
+# s = "banana"
+# count = {}
+
+# for char in s:
+#     if char not in count:
+#         count[char] = 1
+#     else:
+#         count[char] += 1
+# print(count)
+
+# for char in s:
+#     if char in count:
+#         count[char] += 1
+#     else:
+#         count[char] = 1
+
+# print(count)
+
+s = "aababcabc"
+count = 0
+i = 0
+
+while i < len(s) - 2:
+    window = set(s[i: i + 3])
+
+    if len(window) == 3:
+        count += 1
+    i += 1
+
+print(count)
+
 class Node:
     def __init__(self, val = 0):
         self.val = val
